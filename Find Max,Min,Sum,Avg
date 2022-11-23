@@ -1,0 +1,77 @@
+using System;
+
+namespace array_method_print_max_min_sum_average
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Program num = new Program();
+            int[] array = new int[] { -1, 5, 0, 9, 98, 76 };
+            num.FindMinimumNumber(array);
+            int minfrommethod = num.FindMinimumNumber(array);
+            Console.WriteLine("Min is : " + minfrommethod);
+
+            num.FindMaxNumber(array);
+            int maxfrommethod = num.FindMaxNumber(array);
+            Console.WriteLine("Max is : " + maxfrommethod);
+
+            num.FindSum(array);
+            int sumfrommethod = num.FindSum(array);
+            Console.WriteLine("Sum is : " + sumfrommethod);
+
+
+            num.FindAverage(array);
+            int averagefrommethod = num.FindAverage(array);
+            Console.WriteLine("Average is : " + averagefrommethod);
+
+
+
+        }
+        public int FindMinimumNumber(int[] min)
+        {
+            int minvalue = min[0];
+            for (int i = 1; i < minvalue; i++)
+            {
+                if (minvalue > min[i])
+                {
+                    minvalue = min[i];
+                }
+            }
+            return minvalue;
+        }
+        public int FindMaxNumber(int[] max)
+        {
+            int maxvalue = max[0];
+            for (int i = 1; i < max.Length; i++)
+            {
+                if (maxvalue < max[i])
+                {
+                    maxvalue = max[i];
+                }
+            }
+            return maxvalue;
+        }
+        public int FindSum(int[] sum)
+        {
+            int result = 0;
+            for (int i = 0; i < sum.Length; i++)
+            {
+                result += sum[i];
+            }
+            return result;
+        }
+
+        public int FindAverage(int[] average)
+        {
+           int averageresult = 0;
+            int sumresult = 0;
+            for (int i = 0; i < average.Length; i++)
+            {
+                sumresult += average[i];
+                averageresult = sumresult / average.Length;
+            }
+            return averageresult;
+        }
+    }
+}
